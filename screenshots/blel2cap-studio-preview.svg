@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="100%" stop-color="#111927"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#162234"/>
+      <stop offset="100%" stop-color="#0d1522"/>
+    </linearGradient>
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#2979FF"/>
+    </linearGradient>
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="none" stroke="#243247" stroke-width="2"/>
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.08" stroke="#00E5FF" stroke-width="1">
+    <path d="M0 75 H1200 M0 150 H1200 M0 225 H1200 M0 300 H1200 M0 375 H1200 M0 450 H1200 M0 525 H1200 M0 600 H1200"/>
+    <path d="M100 0 V675 M200 0 V675 M300 0 V675 M400 0 V675 M500 0 V675 M600 0 V675 M700 0 V675 M800 0 V675 M900 0 V675 M1000 0 V675 M1100 0 V675"/>
+  </g>
+
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="1200" height="65" fill="#131c2e" stroke="#243247" stroke-width="1"/>
+  <rect x="25" y="15" width="36" height="36" rx="8" fill="url(#cyanBlue)" filter="url(#glowCyan)"/>
+  <text x="43" y="39" fill="#000" font-family="sans-serif" font-weight="900" font-size="19" text-anchor="middle">L</text>
+  <text x="75" y="38" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="20" letter-spacing="-0.5">BLEL2CAPForge Pro</text>
+  <rect x="275" y="22" width="220" height="22" rx="4" fill="#00E5FF" fill-opacity="0.12" stroke="#00E5FF" stroke-width="1"/>
+  <text x="385" y="37" fill="#00E5FF" font-family="sans-serif" font-weight="700" font-size="11" text-anchor="middle">BLUETOOTH LE L2CAP &amp; LE-CoC v5.4</text>
+
+  <!-- Status Badges -->
+  <rect x="910" y="20" width="135" height="26" rx="6" fill="#1a2333" stroke="#00E5FF" stroke-width="1"/>
+  <text x="977" y="37" fill="#00E5FF" font-family="sans-serif" font-weight="700" font-size="12" text-anchor="middle">FIXED &amp; LE-CoC CIDs</text>
+  <rect x="1060" y="20" width="115" height="26" rx="6" fill="#1a2333" stroke="#00E676" stroke-width="1"/>
+  <text x="1117" y="37" fill="#00E676" font-family="sans-serif" font-weight="700" font-size="12" text-anchor="middle">10/10 PASS (100%)</text>
+
+  <!-- Left Card: Signaling & SDU Slicer -->
+  <rect x="30" y="85" width="560" height="555" rx="12" fill="url(#cardGrad)" stroke="#243247" stroke-width="1.5"/>
+  <text x="50" y="120" fill="#00E5FF" font-family="sans-serif" font-weight="800" font-size="15" letter-spacing="0.5">L2CAP SIGNALING &amp; SDU SEGMENTATION</text>
+
+  <g transform="translate(50, 140)">
+    <!-- Row 1: Fixed Signaling Header -->
+    <rect x="0" y="0" width="520" height="42" rx="6" fill="#0a0e17" stroke="#243247"/>
+    <text x="15" y="26" fill="#8da4be" font-family="sans-serif" font-size="12">CID: <tspan fill="#00E5FF" font-weight="700">0x0005 (LE Signaling)</tspan></text>
+    <text x="260" y="26" fill="#8da4be" font-family="sans-serif" font-size="12">OpCode: <tspan fill="#00E676" font-weight="700">0x12 (Conn Param Update)</tspan></text>
+
+    <!-- Row 2: Connection Parameters -->
+    <rect x="0" y="50" width="520" height="50" rx="6" fill="#0a0e17" stroke="#243247"/>
+    <text x="15" y="70" fill="#8da4be" font-family="sans-serif" font-size="11">CONNECTION TIMING PARAMETERS</text>
+    <text x="15" y="89" fill="#FFFFFF" font-family="sans-serif" font-size="12">Interval: 20.0ms - 40.0ms | Latency: 0 | Timeout: 2000ms (100% Margin)</text>
+
+    <!-- Row 3: Synthesized Signaling Frame Hex -->
+    <text x="0" y="120" fill="#8da4be" font-family="sans-serif" font-weight="700" font-size="11">SYNTHESIZED L2CAP B-FRAME (16 OCTETS)</text>
+    <rect x="0" y="130" width="520" height="50" rx="6" fill="#060910" stroke="#00E5FF" stroke-width="1.5"/>
+    <text x="15" y="161" fill="#00E5FF" font-family="monospace" font-weight="700" font-size="13" letter-spacing="2">0C 00 05 00 12 01 08 00 10 00 20 00 00 00 C8 00</text>
+
+    <!-- Row 4: LE-CoC SDU Slicing Section -->
+    <rect x="0" y="200" width="520" height="75" rx="6" fill="#0a0e17" stroke="#243247"/>
+    <text x="15" y="222" fill="#8da4be" font-family="sans-serif" font-size="11">LE-CoC CREDIT-BASED SEGMENTATION (CID 0x0040)</text>
+    <text x="15" y="244" fill="#FFFFFF" font-family="sans-serif" font-weight="600" font-size="13">SDU Payload: 300 Octets -> Sliced into 2 K-Frames (MPS: 247)</text>
+    <text x="15" y="263" fill="#8da4be" font-family="sans-serif" font-size="11">Frame #1: SDU Length Header (2B) + 198B | Frame #2: 102B Continuation</text>
+
+    <!-- Row 5: K-Frame Hex Preview -->
+    <text x="0" y="295" fill="#8da4be" font-family="sans-serif" font-weight="700" font-size="11">K-FRAME #1 WITH SDU LENGTH PREFIX (204 OCTETS)</text>
+    <rect x="0" y="305" width="520" height="50" rx="6" fill="#060910" stroke="#7C4DFF" stroke-width="1.5"/>
+    <text x="15" y="336" fill="#E040FB" font-family="monospace" font-weight="700" font-size="12" letter-spacing="1">C8 00 40 00 2C 01 48 69 67 68 2D 73 70 65 65 64...</text>
+  </g>
+
+  <!-- Right Card: 10-Point Normative Auditor -->
+  <rect x="610" y="85" width="560" height="555" rx="12" fill="url(#cardGrad)" stroke="#243247" stroke-width="1.5"/>
+  <text x="630" y="120" fill="#00E676" font-family="sans-serif" font-weight="800" font-size="15" letter-spacing="0.5">10-POINT NORMATIVE ZERO-TRUST AUDITOR</text>
+
+  <g transform="translate(630, 140)">
+    <!-- Rule 1 -->
+    <rect x="0" y="0" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="0" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="22" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="22" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-01: Legal Channel ID Allocation (0x0005 Fixed LE Channel)</text>
+
+    <!-- Rule 2 -->
+    <rect x="0" y="42" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="42" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="64" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="64" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-02: L2CAP Header Length Consistency (12B == 12B Payload)</text>
+
+    <!-- Rule 3 -->
+    <rect x="0" y="84" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="84" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="106" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="106" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-03: Connection Interval Min Boundary (20.0ms &gt;= 7.5ms)</text>
+
+    <!-- Rule 4 -->
+    <rect x="0" y="126" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="126" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="148" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="148" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-04: Connection Interval Max Alignment (40.0ms &gt;= 20.0ms)</text>
+
+    <!-- Rule 5 -->
+    <rect x="0" y="168" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="168" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="190" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="190" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-05: Peripheral Latency Limit (Latency 0 &lt;= 499)</text>
+
+    <!-- Rule 6 -->
+    <rect x="0" y="210" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="210" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="232" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="232" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-06: Supervision Timeout Range (2000ms in 100ms..32.0s)</text>
+
+    <!-- Rule 7 -->
+    <rect x="0" y="252" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="252" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="274" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="274" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-07: Supervision Timeout vs Latency Margin (2000ms &gt; 80ms)</text>
+
+    <!-- Rule 8 -->
+    <rect x="0" y="294" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="294" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="316" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="316" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-08: Credit-Based Connection MTU Floor (512B &gt;= 23B)</text>
+
+    <!-- Rule 9 -->
+    <rect x="0" y="336" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="336" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="358" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="358" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-09: Credit-Based MPS Boundary (247B in 23B..65533B)</text>
+
+    <!-- Rule 10 -->
+    <rect x="0" y="378" width="520" height="34" rx="4" fill="#0a0e17" stroke="#243247"/>
+    <rect x="0" y="378" width="4" height="34" fill="#00E676"/>
+    <text x="15" y="400" fill="#00E676" font-family="monospace" font-weight="700" font-size="11">[PASS]</text>
+    <text x="65" y="400" fill="#f0f4f8" font-family="sans-serif" font-size="12">RULE-10: Initial Credit Non-Zero Allocation (10 Initial Credits)</text>
+  </g>
+</svg>
